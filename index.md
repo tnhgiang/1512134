@@ -1,37 +1,32 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>B52 Web App</title>
+    <link rel="stylesheet" href="style.css">
 
-You can use the [editor on GitHub](https://github.com/tnhgiang/1512134_B52/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/tnhgiang/1512134_B52/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+    <script src="./tracking/tracking-min.js"></script>
+    <script src="./tracking/data/face-min.js"></script>
+  </head>
+<body>  
+  <div class="container">
+    <div class="header">
+      <h1>💣💣💣 B52 💣💣💣</h1>
+    </div>
+    <div class="buttons">
+      <button id="glasses">Glass 😎</button>
+      <button id="flower-crown">Flower crown 🌷</button>
+      <button id="bunny-ears">Bunny ears 🐰</button> 
+      <button id="party-mask">Party mask 🎭</button>     
+    </div>      
+    <a id="download" download="myImage.jpg" href="" onclick="download_img(this);">Take a photo 📷</a>
+    <div class="webcam">
+      <video id="video" width="500" height="375" preload autoplay loop muted></video>
+      <canvas id="canvas" width="500" height="375"></canvas>
+    </div>  
+  </div>
+  <script src="script.js"></script>    
+</body>
+</html>
