@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
   var vid = document.getElementById('cartoon');
-  var cvs = document.getElementById('canvas1');
+  var cvs = document.getElementById('canvas');
   var ctx = cvs.getContext('2d');
 //   var back = document.createElement('canvas');
 //   var backcontext = back.getContext('2d');

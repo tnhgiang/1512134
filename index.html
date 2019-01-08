@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
-    <title>1512433 - Sobel filter</title>
+    <title>1512134</title>
   </head>
 
   <body>
     <video id="cartoon" width=640 height=360 controls loop>
-      <source src="eclipse.mp4" type="video/mp4">
+      <source src="dog.mp4" type="video/mp4">
   
       Your browser does not support the video tag.
     </video>
 
-    <canvas id="canvas1" width="1330" height="500"></canvas>
+    <canvas id="canvas" width="640" height="360"></canvas>
 
-    <script src="index.js"></script>
+    <script src="sobel.js"></script>
     <noscript>Sorry, your browser does not support JavaScript!</noscript>
+    
+    <div class="footer">
+      <p>1512433 - Nguyễn Nhật Quang - Đồ Họa Ứng Dụng</p>
+    </div>
   </body>
   <style>
 
@@ -41,6 +45,12 @@
         top: 18.3%;
         left: 3%;
         
+      }
+
+      #canvas{
+        position: absolute;
+        top: 18.3%;
+        left: 80%;
       }
     
       .footer {
