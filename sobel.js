@@ -2,25 +2,30 @@ document.addEventListener('DOMContentLoaded', function(){
   var vid = document.getElementById('cartoon');
   var cvs = document.getElementById('canvas');
   var ctx = cvs.getContext('2d');
-//   var back = document.createElement('canvas');
-//   var backcontext = back.getContext('2d');
+  var back = document.createElement('canvas');
+  var backcontext = back.getContext('2d')
 
-  var cvs_w , cvs_h;
+
+  var cw, ch
 
   vid.addEventListener('play', function(){
-      cvs_w = vid.clientWidth;
-      cvs_h = vid.clientHeight;     
-      draw(vid, ctx, cvs_w, cvs_h);
+    cw = vid.clientWidth;
+    ch = vid.clientHeight;
+    cvs.width = cw;
+    cvs.height = ch;
+    back.width = cw;
+    back.height = ch;     
+      draw(vid, ctx, backcontext, cw, ch);
   },false);
 }, false);
 
-function draw(v, c, cw, ch) {
+function draw(v, ctx, bctx, cw, ch) {
   if(v.paused || v.ended) return false;
   // First, draw it into the canvas
-  c.drawImage(v,680,0, cw, ch);
+  c.drawImage(v, 0, 0, cw, ch);
 
   // Grab the pixel data from the canvas
-  var idata = c.getImageData(680,0,cw,ch);
+  var idata = c.getImageData(0,0,cw,ch);
  
   // Loop through the pixels, turning them grayscale
   for(var i = 0; i < idata.data.length; i+=4) {
@@ -40,11 +45,11 @@ function draw(v, c, cw, ch) {
   for (var i = 0; i < idata.data.length; i++) {
             idata.data[i] = data[i];
 }
-//   idata.data = data;
+  idata.data = data;
   // Draw the pixels onto the visible canvas
-  c.putImageData(idata,680,0);
+  c.putImageData(idata,0,0);
   // Start over!
-  setTimeout(draw,0,v,c,cw,ch);
+  setTimeout(function(){ draw(v,c,bc,w,h); }, 0);
 }
 
 function convolution(data, idata, w, kernel_x,kernel_y, opaque=true, threshold=0){
