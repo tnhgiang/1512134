@@ -48,7 +48,7 @@ function draw(v, ctx, bctx, cw, ch) {
   // Draw the pixels onto the visible canvas
   ctx.putImageData(idata,0,0);
   // Start over!
-  setTimeout(function(){ draw(v,c,bc,w,h); }, 0);
+  setTimeout(function(){ draw(v,ctx,bctx,cw,ch); }, 0);
 }
 
 function convolution(data, idata, w, kernel_x,kernel_y, opaque=true, threshold=0){
