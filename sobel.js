@@ -46,7 +46,7 @@ function draw(v, ctx, bctx, cw, ch) {
             idata.data[i] = data[i];
 }
   // Draw the pixels onto the visible canvas
-  c.putImageData(idata,0,0);
+  ctx.putImageData(idata,0,0);
   // Start over!
   setTimeout(function(){ draw(v,c,bc,w,h); }, 0);
 }
