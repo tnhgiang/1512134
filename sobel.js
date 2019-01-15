@@ -37,8 +37,12 @@ function draw(v, ctx, bctx, cw, ch) {
       idata.data[i+1] = brightness;
       idata.data[i+2] = brightness;
   }
-  var kernel_x = [+1, 0, -1, +2, 0, -2, +1, 0, -1];
-  var kernel_y = [+1, +2, +1, 0, 0, 0, -1, -2, -1];
+  var kernel_x = [+1, 0, -1,
+                  +2, 0, -2,
+                  +1, 0, -1];
+  var kernel_y = [+1, +2, +1,
+                   0,  0,  0,
+                  -1, -2, -1];
   var data = [];
   convolution(data,idata.data,cw,kernel_x, kernel_y);
 
@@ -54,9 +58,9 @@ function draw(v, ctx, bctx, cw, ch) {
 function convolution(data, idata, w, kernel_x,kernel_y, opaque=true, threshold=0){
 
   var kernel_size = Math.sqrt(kernel_x.length); 
-  var kernel_step = [-1, -1, -1,0,0,0,1,1,1];
+  var kernel_step = [-1, -1, -1, 0, 0, 0, 1, 1, 1];
   for(var i = 0; i < idata.length; i++) {
-    //   if(i%4==3) continue;
+    
       var alphaFac = opaque ? 1 : 0;
 
       var g_x = 0;
